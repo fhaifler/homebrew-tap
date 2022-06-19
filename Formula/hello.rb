@@ -5,20 +5,20 @@
 class Hello < Formula
   desc "Hello World CLI"
   homepage "https://github.com/fhaifler/hello"
-  version "0.1.1"
+  version "0.1.2"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/fhaifler/hello/releases/download/v0.1.1/hello_v0.1.1_darwin_amd64.tar.gz"
-      sha256 "c54fdea3b97411a122f092a2100e20d7a605459668ef8ef98c1215192faab2d8"
+    if Hardware::CPU.arm?
+      url "https://github.com/fhaifler/hello/releases/download/v0.1.2/hello_v0.1.2_darwin_arm64.tar.gz"
+      sha256 "965ff702087fad2f514adc12518a9b40688c4913d83b39d10716a4d0a99adecd"
 
       def install
         bin.install "hello"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/fhaifler/hello/releases/download/v0.1.1/hello_v0.1.1_darwin_arm64.tar.gz"
-      sha256 "9d0de5df57f763d7888d2a1db87e5c852c4b46a437b1f7422135c69a5ea5f7b0"
+    if Hardware::CPU.intel?
+      url "https://github.com/fhaifler/hello/releases/download/v0.1.2/hello_v0.1.2_darwin_amd64.tar.gz"
+      sha256 "afa5e9f6cdca2f785fc8838413dd4612e58d65e647e7f3c981dbc5b0a7324201"
 
       def install
         bin.install "hello"
@@ -27,17 +27,17 @@ class Hello < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/fhaifler/hello/releases/download/v0.1.1/hello_v0.1.1_linux_arm64.tar.gz"
-      sha256 "56bd86a1567c704614b56bb5a4ab9e4daab28c4d75d91579bc05232bf992c4bf"
+    if Hardware::CPU.intel?
+      url "https://github.com/fhaifler/hello/releases/download/v0.1.2/hello_v0.1.2_linux_amd64.tar.gz"
+      sha256 "966716ab3408817ec0fa8b35d815935aaae5f6964a23ce62e5c66f9ce78e6a61"
 
       def install
         bin.install "hello"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/fhaifler/hello/releases/download/v0.1.1/hello_v0.1.1_linux_amd64.tar.gz"
-      sha256 "d67aae36a678a8c3ee36be050ea6a659144379a41a8e25da730deb39b38fa6dd"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/fhaifler/hello/releases/download/v0.1.2/hello_v0.1.2_linux_arm64.tar.gz"
+      sha256 "550124347b8a0148e83d5b661aae3ee0a12ebffab35b7e0c3362d9e3a17bbaec"
 
       def install
         bin.install "hello"
